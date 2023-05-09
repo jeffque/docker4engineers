@@ -11,10 +11,10 @@ const Img = styled.img`
 const Website = () => {
   return (
     <>
-      <h1>Website</h1>
+      <h1>blog</h1>
       <Img src="./img/website-qrcode.png" />
-      <Link href="https://fersilva.dev" target="_blank">
-        <h2>fersilva.dev</h2>
+      <Link href="https://computaria.gitlab.io/blog/" target="_blank">
+        <h2>computaria</h2>
       </Link>
     </>
   );

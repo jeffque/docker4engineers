@@ -3,6 +3,12 @@ import { Head, Image, Appear } from 'mdx-deck';
 import Code from './Code';
 import Intro from './Intro';
 import Website from './Website';
+import {titleString} from './Constants';
+
+import Daemons from './Daemons';
+import DepsDaemon from './DepsDaemon';
+import Rise from './Rise';
+import Tangled from './Tangled';
 
 export { default as theme } from './theme';
 export * as components from './components';
@@ -15,53 +21,33 @@ export * as components from './components';
     rel="stylesheet"
   />
   <link href="https://fonts.cdnfonts.com/css/cascadia-code" rel="stylesheet" />
-  <title>Introduction to Type-Level programming in TypeScript</title>
+  <title>{titleString}</title>
 </Head>
 
 <Intro />
 
 ---
 
-# Bullets
+# No começo
 
-## Markdown tradicional
-
-- Primeiro
-- Segundo 
+<Daemons />
 
 ---
 
-# Bullets
+# Rise of distros
 
-## HTML tags
-
-<ul>
-  <li>Terceiro</li>
-  <li>Quarto</li>
-</ul>
+<Rise />
 
 ---
 
-# Podemos por svg
+# Instalando tudo
 
-![Literals](./img/literals.svg)
-
+<Tangled />
 ---
+# Dependências
 
-# Bullets aparecendo
-
-<ul>
-  <Appear>
-    <li>Só HTML like</li>
-    <li>`tentando md`</li>
-    <li>
-      <code>null</code>
-    </li>
-  </Appear>
-</ul>
-
+<DepsDaemon />
 ---
-
 # Code examples
 
 ---

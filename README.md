@@ -1,10 +1,6 @@
-This is a template based on https://github.com/fersilva16/type-level-typescript-talk/. Go ahead and give @fersilva16 a star if you like this one.
+# Docker 4 engineers
 
-# Introduction to Type-Level programming in TypeScript
-
-Original slides that originated this template! Please, check bellow :point_down:
-
-Slides: <https://fersilva16.github.io/type-level-typescript-talk>
+Slides: <https://jeffque.github.io/docker4engineers/>
 
 # How to Run
 
@@ -12,6 +8,14 @@ Slides: <https://fersilva16.github.io/type-level-typescript-talk>
 - install the dependencies `yarn`
 - run `yarn start`
 - open `http://localhost:8080` and see the slides
+
+# Publishing
+
+```bash
+yarn publish:deck
+```
+
+It will publish to your github pages from your repo (branch `gh-pages2` because reasons).
 
 # Caveats
 

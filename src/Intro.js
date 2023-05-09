@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { FaTwitter, FaGithub } from 'react-icons/fa';
 import Background from './Background';
+import { mainTitle, subTitle } from './Constants';
 
 const Img = styled.img`
   width: 160px;
@@ -41,24 +42,34 @@ const Title = styled.h2`
   color: #ffffff;
 `;
 
+const SocialTwitter = ({userName}) => {
+  const hrefSocial = `https://twitter.com/${userName}`
+  return <Social href={hrefSocial} target="_blank">
+    <FaTwitter size="22px" />
+    <a>{userName}</a>
+  </Social>
+}
+
+const SocialGithub = ({userName}) => {
+  const hrefSocial = `https://github.com/${userName}`
+  return <Social href={hrefSocial} target="_blank">
+    <FaGithub size="22px" />
+    <a>{userName}</a>
+  </Social>
+}
+
 const Intro = () => {
   return (
     <Background background="#03d69d">
-      <Img src="./img/profile-photo.png" />
-      <Name>Template baseado no trabalho do Fernando Silva</Name>
+      <Img src="https://github.com/jeffque.png" />
+      <Name>{mainTitle}</Name>
       <Socials>
-        <Social href="https://twitter.com/fersilvaa16" target="_blank">
-          <FaTwitter size="22px" />
-          <a>fersilvaa16</a>
-        </Social>
-        <Social href="https://github.com/fersilva16" target="_blank">
-          <FaGithub size="22px" />
-          <a>fersilva16</a>
-        </Social>
+        <SocialTwitter userName="jeffquesado" />
+        <SocialGithub userName="jeffque" />
       </Socials>
       <Logo>
-        <img width="240px" fillcolor="#fff" src="https://github.com/jxnblk/mdx-deck/raw/master/docs/ace.png"/>
-        <Title>Compra um café pro cara</Title>
+        <img width="240px" fillcolor="#fff" src="./img/whale.png"/>
+        <Title>{subTitle}</Title>
       </Logo>
     </Background>
   );
