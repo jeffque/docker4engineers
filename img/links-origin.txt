@@ -1,0 +1,6 @@
+- palpatine.jpg: https://www.pinterest.com/pin/shock-therapy--294493263132017556/
+- melting-clock.jpg: https://www.amazon.com/FAREVER-Salvador-Decorative-Creative-Gift，Antique/dp/B09Y88ZHBY?th=1
+- whale: midjourney generated
+- docker-born.jpg: https://i.imgur.com/3eTKEZp.jpg https://www.reddit.com/r/ProgrammerHumor/comments/cw58z7/it_works_on_my_machine/
+- tangled.jpg: https://www.istockphoto.com/br/foto/tangled-up-kitty-gm152945720-16137273
+- daemon.png: https://en.wikipedia.org/wiki/BSD_Daemon#/media/File:Daemon-phk.svg
