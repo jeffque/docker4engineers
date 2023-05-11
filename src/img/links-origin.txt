@@ -4,3 +4,4 @@
 - docker-born.jpg: https://i.imgur.com/3eTKEZp.jpg https://www.reddit.com/r/ProgrammerHumor/comments/cw58z7/it_works_on_my_machine/
 - tangled.jpg: https://www.istockphoto.com/br/foto/tangled-up-kitty-gm152945720-16137273
 - daemon.png: https://en.wikipedia.org/wiki/BSD_Daemon#/media/File:Daemon-phk.svg
+- docker-desktop-pricing.png: screenshot from https://www.docker.com/pricing/ 2023-05-11
