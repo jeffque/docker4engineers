@@ -35,7 +35,7 @@ const DepsDaemon = () => {
               <Center>
                 <ul>
                     <Subitens title='daemons'>
-                      <li>postgresql</li>
+                      <li>postgres</li>
                       <li>redis</li>
                       <li>sidekiq</li>
                     </Subitens>

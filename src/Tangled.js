@@ -16,7 +16,7 @@ const Tangled = () => {
             <ul>
                 <li>java</li>
                 <li>redis</li>
-                <li>postgresql</li>
+                <li>postgres</li>
                 <li>extensões nativas</li>
             </ul>
         </>

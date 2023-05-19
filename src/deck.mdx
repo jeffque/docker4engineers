@@ -9,9 +9,10 @@ import Daemons from './Daemons';
 import DepsDaemon from './DepsDaemon';
 import Rise from './Rise';
 import Tangled from './Tangled';
+import Worked from './Worked';
+
 
 export { default as theme } from './theme';
-export * as components from './components';
 
 <Head>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -89,57 +90,161 @@ Grátis para uso **PESSOAL**
 - CLI fofa =3
 ---
 
+# Brincando de docker
+
+Bora testar mudar o banco?
+---
+
+- autal: app X, postgres 14.5-alpine
+- desejo: app X, postgres 15
+- app X: rodando local, eg IDE
+- testar em paralelo?
+
+---
+
+1º terminal
+
+```bash
+docker run -e 'POSTGRES_PASSWORD=my-secret-pw' --rm \\
+  -p 5430:5432 postgres:15
+```
+
+2º terminal
+
+```bash
+docker run -e 'POSTGRES_PASSWORD=my-secret-pw' --rm \\
+  -p 5432:5432 postgres:14-alpine
+```
+
+---
+
+<Worked />
+
+---
+
+- subir instância do app X, apontando localhost:5432
+- subir instância do app X, apontando localhost:5430
+- testar em paralelo e ser feliz 😁
+
+---
+
+### Explicando o comando
+
+- criou uma instância nova
+
+```bash
+docker run ... postgres:15
+```
+
+- passou uma variável de ambiente
+
+```bash
+-e 'POSTGRES_PASSWORD=my-secret-pw'
+```
+
+---
+
+### Explicando o comando
+
+
+- mapeou porta
+```bash
+-p 5430:5432
+```
+  - antes do `:` => porta da máquina
+  - depois do `:` => porta do programa
+    - o postgres acha que está escutando a 5432
+---
+
+### Ciclo de vida?
+
+```bash
+docker run ...        # inicia um novo container
+docker run --rm ...   # igual mas se auto remove
+docker start ...      # acorda um container parado
+docker stop ...       # para um container
+docker create ...     # cria um novo container parado
+docker remove ...     # remove o container
+```
+
+---
+
+Precisa inspecionar algo dentro do container?
+
+```bash
+docker exec -it <container> <comando> [args do comando...]
+```
+
+
+---
+
+- Por que o postgres rodou em primeiro plano?
+  - Porque não era um daemon
+
+```bash
+docker run -d ...
+```
+---
+
+## Como fazer o container "persistir"?
+
+- compartilha uma pasta
+
+```bash
+docker run -v <dir-na-minha-máquina>:<dir-no-docker>
+```
+
+- precisa ser caminho absoluto
+---
+
+## Posso testar uma aplicação?
+
+YEP!!!
+
+<ul>
+  <Appear>
+    <li> Lembra do banco? </li>
+    <li> Muda para imagem da sua app! </li>
+    <li> Easy peasy lemon squeezy </li>
+  </Appear>
+</ul>
+
+---
+
+## Como subir um ambiente?
+
+<ul>
+  <li> bash hell? 🤪</li>
+  <Appear>
+    <li> docker compose!! </li>
+  </Appear>
+</ul>
+---
+
+## O que é docker compose?
+
+- descrição de um ambiente
+- serviços + apps
+- exemplo: [server + maria db + ngingx](https://github.com/docker/awesome-compose/blob/master/nginx-golang-mysql/compose.yaml)
+
+---
 <Code
-  title="Naturals"
-  code={require('!raw-loader!./code/naturals.ts')}
+  title="Compose"
+  code={require('!raw-loader!./code/compose.yml')}
   showNumbers={false}
   dark={true}
-  lang="ts"
+  lang="yaml"
   steps={[
-    { range: [1, 3], notes: 'Nat definition' },
-    { range: [5, 12], notes: 'Add' },
-    { range: [14, 21], notes: 'Sub' },
-    { range: [23, 28], notes: 'Mult' },
-    { range: [30, 46], notes: 'Div' },
+    { range: [2, 5], notes: 'construindo app' },
+    { range: [8, 10], notes: 'depende de...' },
+    { range: [12, 15], notes: 'MariaDB' },
+    { range: [28, 30], notes: 'configs MariaDB' },
+    { range: [31, 32], notes: 'porta MariaDB' },
+    { range: [26, 27], notes: 'volume para persistir DB' },
+    { range: [34, 42], notes: 'config proxy reverso' },
+    { range: [43, 44], notes: 'nginx depende de...' },
   ]}
 />
-
----
-
-<Code
-  title="T function options"
-  code={require('!raw-loader!./code/templateOptions.ts')}
-  showNumbers={false}
-  dark={true}
-  lang="ts"
-/>
-
----
-
-<Code
-  title="Naturals"
-  code={require('!raw-loader!./code/naturals.ts')}
-  showNumbers={false}
-  dark={true}
-  lang="ts"
-  steps={[
-    { range: [1, 3], notes: 'Nat definition' },
-    { range: [5, 12], notes: 'Add' },
-    { range: [14, 21], notes: 'Sub' },
-    { range: [23, 28], notes: 'Mult' },
-    { range: [30, 46], notes: 'Div' },
-  ]}
-/>
-
----
-
-# Live links
-
-- https://www.typescriptlang.org/docs/handbook/2/generics.html
-- https://www.typescriptlang.org/docs/handbook/2/conditional-types.html
-- https://www.typescriptlang.org/docs/handbook/2/template-literal-types.html
-- https://www.typescriptlang.org/docs/handbook/unions-and-intersections.html#intersection-types
-
 ---
 
 <Website />

@@ -11,6 +11,7 @@ const Img = styled.img`
 const Website = () => {
   return (
     <>
+      <h1>obrigado</h1>
       <h1>blog</h1>
       <Img src="./img/website-qrcode.png" />
       <Link href="https://computaria.gitlab.io/blog/" target="_blank">
